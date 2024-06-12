@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Context-Aware Replanning with Pre-Explored Semantic Map for Object Navigation">
+
+    <title>Context-Aware Replanning with Pre-Explored Semantic Map for Object Navigation</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="offcanvas.css" rel="stylesheet">
+    <!--    <link rel="icon" href="img/favicon.gif" type="image/gif">-->
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container"></div>
+        <h2>Context-Aware Replanning with Pre-Explored<br>Semantic Map for Object Navigation</h2>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <p>
+                Pre-Explored Semantic Map, constructed through prior exploration using visual language models (VLMs), has proven effective as a foundational element for training-free robotic applications. However, existing approaches assume the map’s accuracy and do
+                not provide effective mechanisms for revising decisions based on incorrect maps. This work introduces <b>Context-Aware Replanning (CARe)</b>, which estimates map uncertainty through confidence scores and multi-view consistency,
+                enabling the agent to revise erroneous decisions stemming from inaccurate maps without additional labels. We demonstrate the effectiveness of our proposed method using two modern map backbones, VLMaps and OpenMask3D, and show significant
+                improvements in performance on object navigation tasks.
+            </p>
+        </div>
+
+        <div class="list-group">
+            <center>
+                <img src="img/fig1.png" style="width:50%;">
+            </center>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="section">
+            <h2>Demonstration</h2>
+            <hr>
+            <p>
+                We provide a demonstration of a robot navigating in a simulated environment using the CARe framework. The robot is equipped with a camera and a map of the environment. The robot is tasked with navigating to a target object in the environment.
+            </p>
+            <p>
+                Task: Find <b>bed.</b>
+            </p>
+
+            <h3>First attempt:</h3>
+            <p>
+                The first attempt is failed. The robot finds a chair-ish object instead of a bed.
+            </p>
+            <div class="list-group">
+                <center>
+                    <video controls>
+                        <source src="img/highest_score_bed.mp4" type="video/mp4">
+                    </video>
+                </center>
+            </div>
+            <br>
+            <h3>Second attempt--Naive: </h3>
+            <p>
+                Intuitively, the robot should the pick the candidate with second-highest score. However, in this case the robot finds another chair-ish object. The reason to this might be the <b>consistent model bias</b> in the pretrained model.
+            </p>
+            <div class="list-group">
+                <center>
+                    <video controls>
+                        <source src="img/second_score_bed.mp4" type="video/mp4">
+                    </video>
+                </center>
+            </div>
+            <br>
+            <h3>Second attempt--Ours: </h3>
+            <p>
+                We propose <b>Context-Aware Replanning (CARe)</b> to improve the navigation performance by leveraging the map uncertainty such as classification entropy and multi-view consistency. The robot successfully finds the bed in the second attempt
+                with our method.
+            </p>
+            <div class="list-group">
+                <center>
+                    <p>
+                        Leveraged map uncertainty: <b>classification entropy</b>, the higher the better
+                    </p>
+                    <video controls>
+                        <source src="img/ent_score4_bed.mp4" type="video/mp4">
+                    </video>
+                </center>
+            </div>
+            <br>
+            <div class="list-group">
+                <center>
+                    <p>
+                        Leveraged map uncertainty: <b>mean pairwise KL divergence</b>, the lower the better
+                    </p>
+                    <video controls>
+                        <source src="img/kl_pred4_bed.mp4" type="video/mp4">
+                    </video>
+                </center>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+
+</body>
+
+</html>
