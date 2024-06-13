@@ -46,12 +46,30 @@
             <h2>Demonstration</h2>
             <hr>
             <p>
-                We provide a demonstration of a robot navigating in a simulated environment using the CARe framework. The robot is equipped with a camera and a map of the environment. The robot is tasked with navigating to a target object in the environment.
+                We demonstrate a robot navigating in a simulated environment using the CARe framework. Equipped with a camera and a map of the environment, the robot is tasked with finding a target object.
+            </p>
+            <p>
+                We focus on a scenario where the first attempt fails. We show that a naive approach, which selects the second-highest score candidate, also fails to find the target object. In contrast, our proposed method, CARe, succeeds.
+            </p>
+            <p>
+                The video below compares navigation results using different strategies for selecting the navigation target from the map. The first column shows the initial attempt, the second column shows the second attempt with the naive strategy, and the third, fourth,
+                and fifth columns display the second attempt using our proposed method. Our method leverages map uncertainty metrics such as classification entropy, channel average standard error, and mean pairwise KL divergence.
             </p>
             <p>
                 Task: Find <b>bed.</b>
             </p>
+            <div class="list-group">
+                <center>
+                    <video controls style="width:100%;">
+                        <source src="img/CARe_Demo_Clipped.mp4" type="video/mp4">
+                    </video>
+                </center>
+            </div>
 
+            <br>
+            <p>
+                We provide furthur explanation on different candidate selection strategy and the corresponding navigation results below
+            </p>
             <h3>First attempt:</h3>
             <p>
                 The first attempt is failed. The robot stops by a chair-ish object instead of a bed.
@@ -78,8 +96,8 @@
             <br>
             <h3>Second attempt--Ours: </h3>
             <p>
-                We propose <b>Context-Aware Replanning (CARe)</b> to address this problem and improve the navigation performance by leveraging the map uncertainty such as classification entropy and multi-view consistency. The robot successfully finds
-                the bed in the second attempt with our method.
+                We propose <b>Context-Aware Replanning (CARe)</b> to address this problem and improve the navigation performance by leveraging the map uncertainty such as classification entropy and multi-view consistency. Our method avoids the persistent
+                model bias and successfully finds the bed in the second attempt.
             </p>
             <div class="list-group">
                 <center>
@@ -95,6 +113,17 @@
             <div class="list-group">
                 <center>
                     <p>
+                        Leveraged map uncertainty: <b>channel average standard error</b>, the lower the better
+                    </p>
+                    <video controls>
+                        <source src="img/stderr_pred16_bed.mp4" type="video/mp4">
+                    </video>
+                </center>
+            </div>
+            <br>
+            <div class="list-group">
+                <center>
+                    <p>
                         Leveraged map uncertainty: <b>mean pairwise KL divergence</b>, the lower the better
                     </p>
                     <video controls>
@@ -102,6 +131,7 @@
                     </video>
                 </center>
             </div>
+
         </div>
 
 
