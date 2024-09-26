@@ -7,7 +7,7 @@ html,
 body {
     overflow-x: hidden;
     /*Prevent scroll on narrow devices */
-    padding-top: 30px;
+    /* padding-top: 30px; */
     text-align: justify;
 }
 
@@ -15,20 +15,8 @@ footer {
     padding: 10px 0;
 }
 
-.btn-container {
-    display: block;
-    text-align: center;
-    align-content: center;
-    display: block;
-    position: relative;
-    left: 50%;
-    top: -32px;
-    word-spacing: 10px;
-    transform: translateY(-50%) translateX(-50%);
-}
-
 .authors {
-    font-size: 18px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,17 +31,38 @@ footer {
     column-gap: 20px;
 }
 
-.small {
-    max-width: 500px !important;
+.schoollogo {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    max-width: 600px;
 }
 
 
 /*.container {
-  max-width: 768px;
-}*/
+   max-width: 768px;
+ }*/
+
+.btn-container {
+    display: block;
+    text-align: center;
+    align-content: center;
+    display: block;
+    position: relative;
+    left: 50%;
+    top: -32px;
+    word-spacing: 10px;
+    transform: translateY(-50%) translateX(-50%);
+}
 
 .container {
     max-width: 1000px;
+}
+
+.small {
+    max-width: 500px !important;
 }
 
 p {
@@ -66,7 +75,20 @@ li {
     font-size: 16px;
 }
 
+h1 {
+    text-align: center;
+    align: center;
+    padding-bottom: 5px;
+}
+
 h2 {
+    text-align: center;
+    align: center;
+    padding-top: 20px;
+}
+
+h3,
+h4 {
     text-align: center;
     align: center;
 }
@@ -145,6 +167,58 @@ h2 {
 .vspace-top {
     margin-top: 30px;
 }
+
+.wrapper {
+    width: 100%;
+    text-align: center;
+    background-color: #646675
+}
+
+.carousel1 {
+    width: 100%;
+    margin: 0px auto;
+}
+
+.carousel3 {
+    width: 100%;
+    margin: 0px auto;
+}
+
+.imgrow {
+    margin: 10px;
+}
+
+.slick-slide {
+    margin: 8px;
+}
+
+.slick-slide img {
+    width: 100%;
+    border: 2px solid #fff;
+}
+
+.left {
+    float: left;
+    width: 50%;
+    background-color: rgb(195, 248, 216);
+    border-right: 10px solid #00000000;
+    border-left: 10px solid #00000000;
+}
+
+.right {
+    float: right;
+    width: 50%;
+    background-color: rgb(249, 199, 199);
+    border-left: 10px solid #00000000;
+    border-right: 10px solid #00000000;
+}
+
+.bottom {
+    clear: both;
+}
+
+
+/* CSS */
 
 .button-34 {
     background: #555555;
