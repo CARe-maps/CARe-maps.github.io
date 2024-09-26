@@ -15,10 +15,6 @@ footer {
     padding: 10px 0;
 }
 
-.small {
-    max-width: 500px !important;
-}
-
 .btn-container {
     display: block;
     text-align: center;
@@ -45,6 +41,10 @@ footer {
     align-items: center;
     justify-content: center;
     column-gap: 20px;
+}
+
+.small {
+    max-width: 500px !important;
 }
 
 
