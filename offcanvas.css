@@ -2,31 +2,68 @@
  * Style tweaks
  * --------------------------------------------------
  */
+
 html,
 body {
-  overflow-x: hidden;  /*Prevent scroll on narrow devices */
-  padding-top: 30px;
+    overflow-x: hidden;
+    /*Prevent scroll on narrow devices */
+    padding-top: 30px;
     text-align: justify;
 }
+
 footer {
-  padding: 10px 0;
+    padding: 10px 0;
 }
+
+.small {
+    max-width: 500px !important;
+}
+
+.btn-container {
+    display: block;
+    text-align: center;
+    align-content: center;
+    display: block;
+    position: relative;
+    left: 50%;
+    top: -32px;
+    word-spacing: 10px;
+    transform: translateY(-50%) translateX(-50%);
+}
+
 .authors {
-  font-size: 20px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
 }
+
+.faculty {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+
 /*.container {
   max-width: 768px;
 }*/
+
 .container {
-  max-width: 1000px;
+    max-width: 1000px;
 }
+
 p {
-  font-size: 16px;
-  padding-bottom: -10px;*/
+    font-size: 16px;
+    padding-bottom: -10px;
+    */
 }
 
 li {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 h2 {
@@ -34,7 +71,7 @@ h2 {
     align: center;
 }
 
-.jumbotron{
+.jumbotron {
     text-align: center;
 }
 
@@ -47,17 +84,17 @@ h2 {
 }
 
 .jumbotron h2 {
-  font-size: 36px;
+    font-size: 36px;
 }
 
 .section {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
-.center{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .vcontainer {
@@ -66,6 +103,7 @@ h2 {
     height: 0;
     padding-bottom: 56.25%;
 }
+
 .video {
     position: absolute;
     top: 0;
@@ -75,7 +113,7 @@ h2 {
 }
 
 .gif {
-    padding:10px;
+    padding: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -83,28 +121,47 @@ h2 {
 }
 
 .caption {
-  width:75%; 
-  font-size:14px
+    width: 75%;
+    font-size: 14px
 }
 
 .bibtexsection {
-  font-family: "Courier",monospace;
-  font-size:16px;
-  white-space:pre;
-  background-color: #f4f4f4;
-  text-align:left;
+    font-family: "Courier", monospace;
+    font-size: 16px;
+    white-space: pre;
+    background-color: #f4f4f4;
+    text-align: left;
 }
 
 .canvas-row canvas {
-  max-width:100%;
+    max-width: 100%;
 }
 
-.padding-0{
-    padding-right:0;
-    padding-left:0;
+.padding-0 {
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .vspace-top {
     margin-top: 30px;
 }
 
+.button-34 {
+    background: #555555;
+    border-radius: 999px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    word-spacing: 5px;
+}
